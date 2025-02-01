@@ -12,26 +12,38 @@ general {
 }
 
 order += "ethernet _first_"
-order += "disk /"
+order += "cpu_usage"
 order += "load"
 order += "memory"
+order += "disk /"
+order += "volume master"
 order += "tztime local"
 
 ethernet _first_ {
-        format_up = "  1000000000KB/s"
+        format_up = "  %ip (%speed)"
         format_down = " Contact Google LOL"
 }
 
-disk "/" {
-        format = "space left for snoopy pics : %avail"
+cpu_usage {
+        format = " %usage"
 }
 
 load {
-        format = "cpu  %1min"
+        format = " %1min"
 }
 
 memory {
-        format = "memory  %used"
+        format = "  %percentage_used"
+}
+
+disk "/" {
+        format = ": %free free for more snoopy pics"
+}
+
+volume master {
+        format = ": %volume"
+        format_muted = ": muted (%volume)"
+        device = "pulse"
 }
 
 tztime local {
