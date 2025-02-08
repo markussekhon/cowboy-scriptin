@@ -1,9 +1,6 @@
 # i3 config file (v4)
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-# Setup/refresh monitors
-exec_always setup_displays
-
 # super key is set to mod
 set $mod Mod4
 
