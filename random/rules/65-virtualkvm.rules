@@ -1,0 +1,2 @@
+ACTION=="add", SUBSYSTEM=="usb", ENV{PRODUCT}=="5e3/610/663", RUN+="/usr/local/bin/kvm.sh -d"
+ACTION=="remove", SUBSYSTEM=="usb", ENV{PRODUCT}=="5e3/610/663", RUN+="/usr/local/bin/kvm.sh -h"
